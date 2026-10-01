@@ -1,0 +1,58 @@
+:root {
+  --bg: #edf1e6;
+  --ink: #222523;
+  --muted: #6e746d;
+  --line: #7d837b;
+  --line-soft: rgba(34, 37, 35, .28);
+  --panel: rgba(237, 241, 230, .72);
+  --mono: 'IBM Plex Mono', 'SFMono-Regular', Consolas, monospace;
+  --sans: Inter, Arial, sans-serif;
+  font-family: var(--mono);
+}
+
+* { box-sizing: border-box; }
+html { min-height: 100%; }
+body { margin: 0; min-height: 100%; background: var(--bg); color: var(--ink); }
+button, input { font: inherit; }
+button { cursor: pointer; color: inherit; }
+button:focus-visible, input:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+
+.app-shell { width: min(1440px, calc(100% - 48px)); margin: 20px auto; border: 1px solid var(--line); border-radius: 34px; overflow: hidden; }
+.topbar { display: flex; justify-content: space-between; align-items: center; gap: 30px; padding: 32px 38px 26px; border-bottom: 1px solid var(--line); }
+.brand-block h1 { margin: 0; font-size: clamp(38px, 6vw, 72px); line-height: .95; font-weight: 400; letter-spacing: -.075em; }
+.micro-label, .section-kicker { margin: 0 0 10px; font-size: 11px; letter-spacing: .13em; color: var(--muted); }
+.topbar__meta { display: flex; align-items: center; gap: 24px; font-size: 18px; }
+.menu-button { width: 42px; height: 42px; border: 0; background: transparent; display: grid; align-content: center; gap: 6px; padding: 8px; }
+.menu-button span { display: block; height: 1.5px; background: var(--ink); width: 100%; }
+
+main { padding: 0 38px 44px; }
+.city-heading { display: flex; justify-content: space-between; align-items: end; gap: 30px; padding: 34px 0 24px; }
+.city-heading h2 { margin: 0; font-size: clamp(30px, 4vw, 54px); line-height: 1; font-weight: 400; letter-spacing: -.06em; }
+.city-date { margin: 10px 0 0; color: var(--muted); font-size: 12px; }
+.dashboard-controls { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 8px; max-width: 650px; }
+.add-widget-button, .toolbar-button { border: 1px solid var(--line); background: transparent; border-radius: 999px; padding: 9px 13px; font-size: 10px; letter-spacing: .05em; }
+.add-widget-button:hover, .toolbar-button:hover { background: var(--ink); color: var(--bg); }
+.dashboard-toolbar { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 10px 0; font-size: 10px; letter-spacing: .08em; }
+.dashboard-toolbar > span { display: flex; align-items: center; gap: 8px; }
+.status-dot { width: 7px; height: 7px; border-radius: 50%; border: 1px solid var(--ink); display: inline-block; }
+.toolbar-button { border: 0; padding: 4px 0; text-decoration: underline; text-underline-offset: 3px; }
+.dashboard-grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 14px; padding-top: 14px; align-items: start; }
+
+.footer { display: flex; justify-content: space-between; gap: 20px; padding: 14px 38px 18px; border-top: 1px solid var(--line); font-size: 9px; letter-spacing: .06em; color: var(--muted); }
+
+@media (max-width: 900px) {
+  .app-shell { width: calc(100% - 24px); margin: 12px auto; border-radius: 24px; }
+  .topbar, main { padding-left: 22px; padding-right: 22px; }
+  .footer { padding-left: 22px; padding-right: 22px; }
+  .city-heading { align-items: start; flex-direction: column; }
+  .dashboard-controls { justify-content: flex-start; }
+}
+
+@media (max-width: 620px) {
+  .topbar { padding-top: 24px; }
+  .topbar__meta { gap: 12px; }
+  .brand-block h1 { font-size: 38px; }
+  .city-heading h2 { font-size: 34px; }
+  .dashboard-grid { grid-template-columns: 1fr; }
+  .footer { flex-direction: column; }
+}

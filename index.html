@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="WHERE TO EAT?">
+  <title>DINING CITY</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/components.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand-block">
+        <p class="micro-label">PERSONAL GASTRONOMIC DASHBOARD</p>
+        <h1>WHERE TO EAT?</h1>
+      </div>
+      <div class="topbar__meta">
+        <span id="current-time">--:--</span>
+        <button class="menu-button" type="button" aria-label="Меню" aria-expanded="false"><span></span><span></span><span></span></button>
+      </div>
+    </header>
+    <main>
+      <section class="city-heading">
+        <div>
+          <p class="section-kicker">CITY / TODAY</p>
+          <h2>ST. PETERSBURG</h2>
+          <p class="city-date" id="current-date">--</p>
+        </div>
+        <div class="dashboard-controls" aria-label="Добавить виджет">
+          <button class="add-widget-button" data-add-widget="restaurants" type="button">+ RESTAURANTS</button>
+          <button class="add-widget-button" data-add-widget="weather" type="button">+ WEATHER</button>
+          <button class="add-widget-button" data-add-widget="cuisine" type="button">+ CUISINES</button>
+          <button class="add-widget-button" data-add-widget="saved" type="button">+ SAVED</button>
+          <button class="add-widget-button" data-add-widget="plans" type="button">+ PLANS</button>
+        </div>
+      </section>
+      <section class="dashboard-toolbar">
+        <span><i class="status-dot"></i> LIVE DATA</span>
+        <button id="reset-dashboard" class="toolbar-button" type="button">RESET DASHBOARD</button>
+      </section>
+      <section id="dashboard" class="dashboard-grid" aria-live="polite"></section>
+    </main>
+    <footer class="footer">
+      <span>PERSONAL GASTRONOMIC DASHBOARD</span>
+      <span>WHERE TO EAT?</span>
+    </footer>
+  </div>
+  <script src="main.js" defer></script>
+</body>
+</html>
